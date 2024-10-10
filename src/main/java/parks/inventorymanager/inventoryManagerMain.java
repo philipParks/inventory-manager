@@ -9,6 +9,7 @@ import java.io.IOException;
 /** This class launches an application for the management of inventory.
  * @author Philip Parks */
 public class inventoryManagerMain extends Application {
+
     /** This method overrides the start method of Application.
      * Sets the stage for the initial view.
      * @param stage The first scene to display.*/

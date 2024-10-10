@@ -1,7 +1,9 @@
 package parks.inventorymanager.model;
 /** This class creates an instance of Part made on sight. */
 public class InHouse extends Part {
+
     private int machineId;
+
     /** This method is a constructor for InHouse.
      * @param id The unique number associated with a Part.
      * @param name The name of the Part.

@@ -230,6 +230,7 @@ public class mainViewController implements Initializable {
     /** Removes the selected Product from the allProducts list and the productsTableView. */
     @FXML
     public void onProductDeleteButtonClick() {
+
         Product selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
 
         if (!selectedProduct.getAllAssociatedParts().isEmpty()) {
