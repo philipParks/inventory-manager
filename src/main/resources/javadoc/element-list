@@ -1,0 +1,4 @@
+module:parks.inventorymanager
+parks.inventorymanager
+parks.inventorymanager.controller
+parks.inventorymanager.model
