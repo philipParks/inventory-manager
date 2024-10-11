@@ -6,15 +6,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
 import java.util.Optional;
+
 /** This class creates an instance of a Product. */
 public class Product {
-    private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
+
     private int id;
     private String name;
     private double price;
     private int stock;
     private int min;
     private int max;
+
+    private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
+
     /** This method is a constructor for the Product class.
      * @param id The unique number assigned to the Product.
      * @param name The name of the Product.
