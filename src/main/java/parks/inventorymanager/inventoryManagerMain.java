@@ -30,6 +30,20 @@ public class inventoryManagerMain extends Application {
      * @param args The statements of the program.
      * */
     public static void main(String[] args) {
+
+        // TODO finish building database
+        // create functions that will refresh the data
+        // ensure SQL is secure
+        // test connection to database
+        // TODO finish setting up testing
+        // create test files for all classes
+        // set up any other tests that may need to be performed
+        // TODO finish data access objects
+        // everything in the database needs to be accessible
+        // TODO set up reports and records
+        // record login activity
+        // make an option to print or export reports
+
         launch();
     }
 

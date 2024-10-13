@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.LoginController">
+    <HBox alignment="CENTER_LEFT" layoutX="145.0" layoutY="14.0" prefHeight="100.0" prefWidth="310.0">
+        <padding>
+            <Insets left="10.0" />
+        </padding>
+        <Label text="T.I.M.E.">
+            <font>
+                <Font name="System Bold" size="64.0" />
+            </font>
+        </Label>
+        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0">
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+            <Label fx:id="timeTLbl" text="Time">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <Label fx:id="timeILbl" layoutX="10.0" layoutY="52.0" text="Integrity">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <Label fx:id="timeMLbl" layoutX="10.0" layoutY="60.0" text="Management">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <Label fx:id="timeELbl" layoutX="10.0" layoutY="69.0" text="Entity">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+        </VBox>
+    </HBox>
+    <VBox layoutY="126.0" prefHeight="200.0" prefWidth="600.0">
+        <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+        </padding>
+        <Label fx:id="credentialsLbl" text="Please enter your credentials">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+            <padding>
+                <Insets left="25.0" right="25.0" />
+            </padding>
+            <Label fx:id="usernameLbl" prefWidth="102.0" text="Username" />
+            <TextField fx:id="userNameTxtFld" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="35.0" layoutY="35.0" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+            <padding>
+                <Insets left="25.0" right="25.0" />
+            </padding>
+            <Label fx:id="passwordLbl" prefWidth="102.0" text="Password" />
+            <PasswordField fx:id="passwordTxtFld" />
+        </HBox>
+    </VBox>
+    <Label fx:id="warnLabel" layoutX="14.0" layoutY="345.0" text="System Message">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <HBox alignment="CENTER" layoutX="386.0" layoutY="326.0" prefHeight="60.0" prefWidth="200.0" spacing="14.0">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+        <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonClicked" text="Submit" />
+        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonClicked" text="Cancel" />
+    </HBox>
+    <Label fx:id="zoneLabel" layoutX="14.0" layoutY="14.0" text="Local Time Zone ID" />
+</AnchorPane>
