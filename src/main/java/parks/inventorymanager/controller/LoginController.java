@@ -1,6 +1,5 @@
 package parks.inventorymanager.controller;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,34 +9,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import parks.inventorymanager.dao.UserQuery;
+import parks.inventorymanager.dao.UserDAO;
 import parks.inventorymanager.model.User;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/** The log-in view controller.
+ * @author Philip Parks */
 public class LoginController implements Initializable {
-    @FXML
-    private Button submitButton;
-    @FXML
-    private Button cancelButton;
-    @FXML
-    private Label passwordLbl;
-    @FXML
-    private Label usernameLbl;
-    @FXML
-    private Label credentialsLbl;
-    @FXML
-    private Label zoneLabel;
+
     @FXML
     private Label warnLabel;
     @FXML
@@ -45,80 +31,72 @@ public class LoginController implements Initializable {
     @FXML
     private TextField userNameTxtFld;
 
+    /** The logged-in user. */
     public static User authUser;
 
-    private ResourceBundle rb;
-
-    /** Overrides the initialize method. */
+    /** Implements initialization. */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ZoneId systemZone = ZoneId.systemDefault();
-        String zoneId = systemZone.getId();
-        zoneLabel.setText(zoneId);
         warnLabel.setText("");
 
     }
 
-    /** Verifies credentials and loads the main view. */
-    public void submitButtonClicked(ActionEvent buttonClicked) throws IOException {
+    /** Verifies credentials and loads the main view.
+     * @param buttonClicked The submit button is clicked.
+     * @throws IOException If an I/O error occurs with the primary view. */
+    public void submitClicked(ActionEvent buttonClicked) throws IOException {
         String userName = userNameTxtFld.getText();
         String password = passwordTxtFld.getText();
-        authUser = UserQuery.select(userName, password);
+        authUser = UserDAO.select(userName, password);
         // Set up the login_activity.txt file
         String fileName = "login_activity.txt";
         ZonedDateTime currentLocalZDT = ZonedDateTime.now();
         FileWriter writeToFile = new FileWriter(fileName, true);
         PrintWriter targetFile = new PrintWriter(writeToFile);
-        // Set up the 15-minute alert
-        Alert appointmentAlert = new Alert(Alert.AlertType.INFORMATION);
-        appointmentAlert.setTitle(rb.getString("apptAlertTitle"));
 
         if (userName.isEmpty()) {
-            warnLabel.setText("*** " + rb.getString("usernameError") + " ***");
+            warnLabel.setText("Please enter a valid user name.");
             return;
         }
 
         if (password.isEmpty()) {
-            warnLabel.setText("*** " + rb.getString("passwordError") + " ***");
+            warnLabel.setText("Please enter a valid password");
             return;
         }
 
         if (authUser == null) {
             targetFile.println("Failed log in: " + currentLocalZDT + " Username: " + userName + " Password: " + password);
             targetFile.close();
-            warnLabel.setText("*** " + rb.getString("credentialsError") + " ***");
+            warnLabel.setText("Incorrect user name or password");
             return;
         } else {
             targetFile.println("Successful log in: " + currentLocalZDT + " Username: " + userName);
             targetFile.close();
         }
 
-        appointmentAlert.setHeaderText(rb.getString("thereIsNotAnAppointment"));
-        appointmentAlert.setContentText(rb.getString("noAppointment"));
-        appointmentAlert.showAndWait();
-
         FXMLLoader mainViewLoader = new FXMLLoader();
-        mainViewLoader.setLocation(getClass().getResource("/com/TIME/view/mainView.fxml"));
+        mainViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
         mainViewLoader.load();
 
         Parent mainViewParent = mainViewLoader.getRoot();
         Scene mainViewScene = new Scene(mainViewParent);
         Stage mainViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
-        mainViewWindow.setTitle("T.I.M.E.");
+        mainViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
         mainViewWindow.setScene(mainViewScene);
         mainViewWindow.show();
     }
 
     /** Closes the application. */
-    public void cancelButtonClicked() {
-        Alert exitAlert = new Alert(Alert.AlertType.WARNING, rb.getString("cancelAlertText"));
-        exitAlert.setTitle(rb.getString("cancelAlertTitle"));
-        exitAlert.setHeaderText(rb.getString("cancelAlertHeader"));
+    public void cancelClicked() {
+        Alert exitAlert = new Alert(Alert.AlertType.WARNING, "Click \"OK\" to close the application\nClick \"Cancel\" to return to the login screen\n");
+        exitAlert.setTitle("Cancel confirmation dialog");
+        exitAlert.setHeaderText("Are you sure you want to cancel?");
         Optional<ButtonType> result = exitAlert.showAndWait();
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
+            System.out.println("Application closed!");
             System.exit(0);
         }
     }

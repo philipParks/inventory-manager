@@ -1,27 +1,29 @@
 package parks.inventorymanager.model;
 
-/** Defines a user object */
+/** Defines a user. */
 public class User {
 
     private int userId;
     private String userName;
     private String password;
+    private boolean isAdmin;
 
-    /** Overrides the toString() method to only return the name of the division.
-     * @return Only the name of the first level divisions. */
+    /** Overrides the toString() method to only return the username of the user.
+     * @return The username of the user. */
     @Override
     public String toString() {
         return userName;
     }
 
-    /** Constructs a user object.
+    /** Constructs a user.
      * @param id Automatically assigned unique value.
      * @param name The user's name.
      * @param password The user's password.*/
-    public User(int id, String name, String password) {
+    public User(int id, String name, String password, boolean isAdmin) {
         this.userId = id;
         this.userName = name;
         this.password = password;
+        this.isAdmin = isAdmin;
     }
 
     /** Gets user id.
@@ -55,8 +57,19 @@ public class User {
     }
 
     /** Sets the user password. */
-    public void setPassword() {
-        this.password = null;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
+    /** Gets the user admin status.
+     * @return The user admin status. */
+    public boolean getAdmin() {
+        return isAdmin;
+    }
+
+    /** Sets the user admin status.
+     * @param admin The user admin status. */
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
 }

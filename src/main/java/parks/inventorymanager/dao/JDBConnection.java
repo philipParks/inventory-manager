@@ -4,20 +4,23 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/** Establishes a connection to the 'client_schedule' database. */
+/** Establishes a connection to the database.
+ * @author Philip Parks */
 public abstract class JDBConnection {
 
     private static final String protocol = "jdbc";
     private static final String vendor = ":mysql:";
     private static final String location = "//localhost/";
-    private static final String databaseName = "client_schedule";
-    private static final String jdbcUrl = protocol + vendor + location + databaseName; //  + "?connectionTimeZone = SERVER"
+    private static final String databaseName = "inventory";
+    private static final String jdbcUrl = protocol + vendor + location + databaseName;
     private static final String driver = "com.mysql.cj.jdbc.Driver";
     private static final String userName = "sqlUser";
     private static final String password = "Passw0rd!";
+
+    /** The database connection. */
     public static Connection connection;
 
-    /** Opens a connection to the client schedule database. */
+    /** Opens a connection to the database. */
     public static void openConnection() {
         try {
             Class.forName(driver); // Locate Driver
@@ -37,9 +40,7 @@ public abstract class JDBConnection {
     public static void closeConnection() {
         try {
             connection.close();
-        }
-        catch(Exception e)
-        {
+        } catch(Exception e) {
             // Do nothing
         }
     }

@@ -8,7 +8,7 @@ Engine-uity Rebuilds Inventory Manager
 Purpose
 *******
 
-An application that assists consultants in tracking and scheduling customer appointments.
+An application that interfaces with a database of engines and parts related to engine rebuilds.
 
 ******
 Author
@@ -27,7 +27,7 @@ Application Version:
 1.0
 
 Application Version Date:
-20 October 2024
+17 November 2024
 
 IDE:
 IntelliJ IDEA 2024.1.1 (Community Edition)
@@ -76,12 +76,6 @@ From the quick view, click the 'modify' button to update a customers' informatio
 
 To log out of the application and return to the login screen, click on the 'Log out' button located on the bottom right
 of the screen.
-
-********************************
-DESCRIPTION OF ADDITIONAL REPORT
-********************************
-
-Reports the total appointments associated with a chosen location. The choice is made via a combo box.
 
 ***********************
 MySQL Connector Version

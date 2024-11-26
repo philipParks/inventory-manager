@@ -1,4 +1,5 @@
 module:parks.inventorymanager
 parks.inventorymanager
 parks.inventorymanager.controller
+parks.inventorymanager.dao
 parks.inventorymanager.model
