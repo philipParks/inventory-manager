@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.PrimaryViewController">
+    <SplitPane dividerPositions="0.8454773869346733" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Tab onSelectionChanged="#onEngineTabSelected" text="Engines">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <TableView fx:id="engineTable" layoutX="200.0" layoutY="84.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <columns>
+                                <TableColumn fx:id="engineIdCol" prefWidth="70.0" text="Number" />
+                                <TableColumn fx:id="nomenclatureCol" prefWidth="200.0" text="Nomenclature" />
+                                <TableColumn fx:id="serialNumberCol" prefWidth="108.0" text="Serial Number" />
+                                <TableColumn fx:id="fuelCol" prefWidth="83.0" text="Fuel Type" />
+                                <TableColumn fx:id="cylinderCol" prefWidth="110.0" text="Cylinder Config" />
+                                <TableColumn fx:id="statusCol" prefWidth="103.0" text="Status" />
+                                <TableColumn fx:id="locationCol" prefWidth="103.0" text="Location" />
+                            </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT" layoutX="522.0" layoutY="390.0" prefHeight="50.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <padding>
+                                <Insets right="20.0" />
+                            </padding>
+                            <Button mnemonicParsing="false" onAction="#onNewEngineClick" text="New Engine" />
+                            <Button mnemonicParsing="false" onAction="#onModifyEngineClick" text="Modify" />
+                            <Button mnemonicParsing="false" onAction="#onDeleteEngineClick" text="Delete" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="421.0" prefHeight="50.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                            <Button mnemonicParsing="false" onAction="#onEngineSearchClick" text="Search" />
+                            <TextField fx:id="engineSearchTxt" promptText="Search Engines" />
+                        </HBox>
+                    </AnchorPane>
+                </Tab>
+                <Tab onSelectionChanged="#onPartTabSelected" text="Parts">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <SplitPane dividerPositions="0.85" layoutX="209.0" layoutY="69.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                <SplitPane dividerPositions="0.5" layoutX="198.0" layoutY="37.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                        <TableView fx:id="inhouseTable" layoutX="14.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                                            <columns>
+                                                <TableColumn fx:id="inhouseNumberCol" maxWidth="500.0" minWidth="55.0" prefWidth="55.0" text="Number" />
+                                                <TableColumn fx:id="inhouseNameCol" prefWidth="150.0" text="Name" />
+                                                <TableColumn fx:id="inhouseLocationCol" prefWidth="78.0" text="Location" />
+                                    <TableColumn fx:id="workstationCol" prefWidth="90.0" text="Workstation" />
+                                            </columns>
+                                        </TableView>
+                                        <HBox alignment="CENTER" layoutX="184.0" prefHeight="50.0" prefWidth="394.0" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <Label text="In-House">
+                                                <font>
+                                                    <Font name="System Bold" size="18.0" />
+                                                </font>
+                                            </Label>
+                                            <Button mnemonicParsing="false" onAction="#onInhouseSearchClick" text="Search" />
+                                            <TextField fx:id="inhouseSearchTxt" promptText="Search In-House Parts" />
+                                        </HBox>
+                                        <HBox alignment="CENTER_RIGHT" layoutY="343.0" prefHeight="50.0" prefWidth="394.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                            <padding>
+                                                <Insets left="20.0" right="20.0" />
+                                            </padding>
+                                            <Button mnemonicParsing="false" onAction="#onModifyInhouseClick" text="Modify" />
+                                            <Button mnemonicParsing="false" onAction="#onDeleteInhouseClick" text="Delete" />
+                                        </HBox>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                        <TableView fx:id="outsourceTable" layoutX="43.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                                            <columns>
+                                                <TableColumn fx:id="outsourceNumberCol" maxWidth="500.0" minWidth="55.0" prefWidth="55.0" text="Number" />
+                                                <TableColumn fx:id="outsourceNameCol" prefWidth="150.0" text="Name" />
+                                                <TableColumn fx:id="outsourceLocationCol" prefWidth="78.0" text="Location" />
+                                    <TableColumn fx:id="distributorCol" prefWidth="89.0" text="Distributor" />
+                                            </columns>
+                                        </TableView>
+                                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="394.0" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <Label text="Outsource">
+                                                <font>
+                                                    <Font name="System Bold" size="18.0" />
+                                                </font>
+                                            </Label>
+                                            <Button mnemonicParsing="false" onAction="#onOutsourceSearchClick" text="Search" />
+                                            <TextField fx:id="outsourceSearchTxt" promptText="Search Outsourced Parts" />
+                                        </HBox>
+                                        <HBox alignment="CENTER_RIGHT" layoutX="1.0" layoutY="340.0" prefHeight="50.0" prefWidth="394.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                            <padding>
+                                                <Insets left="20.0" right="20.0" />
+                                            </padding>
+                                            <Button mnemonicParsing="false" onAction="#onModifyOutsourceClick" text="Modify" />
+                                            <Button mnemonicParsing="false" onAction="#onDeleteOutsourceClick" text="Delete" />
+                                        </HBox>
+                                    </AnchorPane>
+                                </SplitPane>
+                            </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                <HBox alignment="CENTER" layoutX="198.0" layoutY="-1.0" prefHeight="100.0" prefWidth="400.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="0.0">
+                                    <Button mnemonicParsing="false" onAction="#onAddPartClick" text="Add Part" />
+                                </HBox>
+                            </AnchorPane>
+                        </SplitPane>
+                    </AnchorPane>
+                </Tab>
+                <Tab fx:id="adminTab" onSelectionChanged="#onAdminTabSelected" text="Admin">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <SplitPane dividerPositions="0.5" layoutX="299.0" layoutY="155.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                <SplitPane dividerPositions="0.5" layoutX="118.0" layoutY="134.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <VBox layoutX="147.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+                                                <padding>
+                                                    <Insets left="20.0" />
+                                                </padding>
+                                                <Label text="In-House Part Reports">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button mnemonicParsing="false" onAction="#onAddWorkstationClick" text="Add Workstation" />
+                                            </HBox>
+                                            <TableView fx:id="iprTable" prefHeight="150.0" prefWidth="200.0">
+                                                <columns>
+                                                    <TableColumn fx:id="ihrNumberCol" prefWidth="75.0" text="Number" />
+                                                    <TableColumn fx:id="ihrNameCol" prefWidth="200.0" text="Name" />
+                                                    <TableColumn fx:id="ihrLocationCol" prefWidth="117.0" text="Location" />
+                                                </columns>
+                                            </TableView>
+                                            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <Button mnemonicParsing="false" onAction="#runIprClick" text="Select a Workstation" />
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                                    <ChoiceBox fx:id="workstationCB" prefWidth="150.0" />
+                                                </HBox>
+                                            </HBox>
+                                        </VBox>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <VBox layoutX="121.0" layoutY="25.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                                <padding>
+                                                    <Insets left="20.0" />
+                                                </padding>
+                                                <Label text="Engine Reports">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                            </HBox>
+                                            <TableView fx:id="erTable" prefHeight="150.0" prefWidth="200.0">
+                                                <columns>
+                                                    <TableColumn fx:id="erNumberCol" prefWidth="75.0" text="Number" />
+                                                    <TableColumn fx:id="erNameCol" prefWidth="200.0" text="Name" />
+                                                    <TableColumn fx:id="erLocationCol" prefWidth="117.0" text="Location" />
+                                                </columns>
+                                            </TableView>
+                                            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <Button mnemonicParsing="false" onAction="#runEngineReportClick" text="Select a Status" />
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                                    <ChoiceBox fx:id="engineStatusCB" prefWidth="150.0" />
+                                                </HBox>
+                                            </HBox>
+                                        </VBox>
+                                    </AnchorPane>
+                                </SplitPane>
+                            </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                <SplitPane dividerPositions="0.5" layoutX="104.0" layoutY="100.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <VBox layoutX="146.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+                                                <padding>
+                                                    <Insets left="20.0" />
+                                                </padding>
+                                                <Label text="Outsource Part Reports">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button mnemonicParsing="false" onAction="#onAddDistributorClick" text="Add Distributor" />
+                                            </HBox>
+                                            <TableView fx:id="oprTable" prefHeight="150.0" prefWidth="200.0">
+                                                <columns>
+                                                    <TableColumn fx:id="orNumberCol" prefWidth="75.0" text="Number" />
+                                                    <TableColumn fx:id="orNameCol" prefWidth="200.0" text="Name" />
+                                                    <TableColumn fx:id="orLocationCol" prefWidth="117.0" text="Location" />
+                                                </columns>
+                                            </TableView>
+                                            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <Button mnemonicParsing="false" onAction="#runOprClick" text="Select a Distributor" />
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                                    <ChoiceBox fx:id="distributorCB" prefWidth="150.0" />
+                                                </HBox>
+                                            </HBox>
+                                        </VBox>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <VBox layoutX="146.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+                                                <padding>
+                                                    <Insets left="20.0" />
+                                                </padding>
+                                                <Label text="User Management">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="200.0">
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <Label text="User Name">
+                                                        <font>
+                                                            <Font size="18.0" />
+                                                        </font>
+                                                    </Label>
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                                    <TextField fx:id="usernameTxt" promptText="Enter UserName" />
+                                                </HBox>
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="200.0">
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <Label text="Password">
+                                                        <font>
+                                                            <Font size="18.0" />
+                                                        </font>
+                                                    </Label>
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                                    <PasswordField fx:id="passwordTxt" promptText="Enter Password" />
+                                                </HBox>
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <Label text="Re-Enter Password">
+                                                        <font>
+                                                            <Font size="18.0" />
+                                                        </font>
+                                                    </Label>
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                                    <PasswordField fx:id="reenterPasswordTxt" promptText="Re-Enter Password" />
+                                                </HBox>
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="200.0">
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                    <CheckBox fx:id="adminCheckBox" mnemonicParsing="false" text="Admin">
+                                                        <font>
+                                                            <Font size="18.0" />
+                                                        </font>
+                                                    </CheckBox>
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                                       <Button mnemonicParsing="false" onAction="#onSaveUserClick" text="Save User" />
+                                       </children>
+                                                </HBox>
+                                            </HBox>
+                                        </VBox>
+                                    </AnchorPane>
+                                </SplitPane>
+                            </AnchorPane>
+                        </SplitPane>
+                    </AnchorPane>
+                </Tab>
+            </TabPane>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <HBox alignment="CENTER_RIGHT" layoutX="384.0" layoutY="-21.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+                <Button mnemonicParsing="false" onAction="#onLogOutClick" text="Log-Out" />
+            </HBox>
+            <Label fx:id="systemMessageLabel" layoutX="20.0" layoutY="36.0" text="System Message" AnchorPane.leftAnchor="20.0" />
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.PartViewController">
+    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER" prefHeight="90.0" prefWidth="400.0" spacing="20.0">
+            <Label text="Part:">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+            <Label fx:id="partIdLabel" layoutX="158.0" layoutY="46.0" text="Part ID">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <RadioButton fx:id="inhouseRB" mnemonicParsing="false" onAction="#onInhouseSelected" selected="true" text="In-House">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="partSource" />
+                    </toggleGroup>
+                </RadioButton>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <RadioButton fx:id="outsourceRB" mnemonicParsing="false" onAction="#onOutsourceSelected" text="Outsourced" toggleGroup="$partSource" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label fx:id="sourceLabel" text="Source Label">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <ChoiceBox fx:id="sourceCB" prefWidth="150.0" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="210.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Part Name">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="partNameTxt" promptText="Part Name" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Inventory Location">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="locationTxt" promptText="physical location" />
+            </HBox>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="360.0" prefHeight="60.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                <padding>
+                    <Insets left="20.0" right="20.0" />
+                </padding>
+                <Label fx:id="systemMessageLabel" text="system message" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="210.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                <padding>
+                    <Insets left="20.0" right="20.0" />
+                </padding>
+                <Button mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+                <Button mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+            </HBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

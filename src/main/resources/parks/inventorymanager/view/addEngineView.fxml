@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.AddEngineViewController">
+    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="20.0">
+            <Label layoutX="158.0" layoutY="46.0" text="New Engine">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Engine Name">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="engineNameTxt" promptText="Engine Nomenclature" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Serial Number">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="serialNumberTxt" promptText="Serial Number" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Fuel Type">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="fuelTypeTxt" promptText="Fuel Type" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="210.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Cylinder">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="cylinderTxt" promptText="Cylinder Configuration" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="260.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Status">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="statusTxt" promptText="Current Status of Engine" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="310.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Location">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="locationTxt" promptText="Current Location" />
+            </HBox>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="360.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                <padding>
+                    <Insets left="20.0" right="20.0" />
+                </padding>
+                <Button mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+                <Button mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+            </HBox>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="360.0" prefHeight="50.0" prefWidth="200.0">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <Label fx:id="systemMessageLabel" text="System Message" />
+        </HBox>
+    </VBox>
+</AnchorPane>

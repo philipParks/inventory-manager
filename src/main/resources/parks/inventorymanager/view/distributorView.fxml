@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.DistributorViewController">
+    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="20.0">
+            <Label text="New Distributor">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Distributor Name">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="distributorNameTxt" promptText="Distributor Name" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Street Address">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="streetTxt" promptText="Street Address" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="City">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="cityTxt" promptText="City" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="210.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="State">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="stateTxt" promptText="State" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="260.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Zipcode">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="zipcodeTxt" promptText="Zipcode" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="310.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Contact">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="contactTxt" promptText="Name of Contact" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="460.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Contact Phone">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="phoneTxt" promptText="Contact Phone #" />
+            </HBox>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="360.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Contact Email">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="emailTxt" promptText="Contact Email" />
+            </HBox>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="360.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <Label fx:id="systemMessageLabel" text="System Message" />
+            <padding>
+               <Insets left="10.0" />
+            </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                <padding>
+                    <Insets left="20.0" right="20.0" />
+                </padding>
+                <Button mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+                <Button mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+            </HBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

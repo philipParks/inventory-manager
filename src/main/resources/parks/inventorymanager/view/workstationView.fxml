@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.WorkstationViewController">
+    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER" prefHeight="90.0" prefWidth="400.0" spacing="20.0">
+            <Label text="Add Workstation">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="210.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <padding>
+                    <Insets left="50.0" />
+                </padding>
+                <Label text="Workstation Name">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                <TextField fx:id="workstationNameTxt" promptText="Workstation Name" />
+            </HBox>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="360.0" prefHeight="60.0" prefWidth="200.0">
+            <HBox alignment="CENTER_RIGHT" layoutX="210.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                <padding>
+                    <Insets left="20.0" right="20.0" />
+                </padding>
+                <Button mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+                <Button mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+            </HBox>
+        </HBox>
+         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+             <padding>
+                 <Insets left="20.0" right="20.0" />
+             </padding>
+             <Label fx:id="systemMessageLabel" text="system message" />
+         </HBox>
+    </VBox>
+</AnchorPane>
