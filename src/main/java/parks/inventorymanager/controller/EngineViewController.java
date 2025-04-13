@@ -148,7 +148,7 @@ public class EngineViewController implements Initializable {
      * @param saveButtonClicked The save button was clicked.
      * @throws IOException If an I/O error occurs with the primary view.*/
     public void onSaveClick(ActionEvent saveButtonClicked) throws IOException {
-        int engineId = Integer.parseInt(engineIdLabel.getId());
+        int engineId = Integer.parseInt(engineIdLabel.getText());
         String engine = nomenclatureTxt.getText();
         String serialNumber = serialNumberTxt.getText();
         String fuelType = fuelTypeTxt.getText();
@@ -175,6 +175,7 @@ public class EngineViewController implements Initializable {
 
         Parent primaryViewParent = FXMLLoader.load(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
         Scene primaryViewScene = new Scene(primaryViewParent);
+        primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         Stage primaryViewWindow = (Stage) ((Node)saveButtonClicked.getSource()).getScene().getWindow();
 
         primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
@@ -201,6 +202,7 @@ public class EngineViewController implements Initializable {
 
             Parent primaryViewParent = primaryViewLoader.getRoot();
             Scene primaryViewScene = new Scene(primaryViewParent);
+            primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
             Stage primaryViewWindow = (Stage) ((Node)buttonClicked.getSource()).getScene().getWindow();
 
             primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");

@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.PrimaryViewController">
-    <SplitPane dividerPositions="0.8454773869346733" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                <Tab onSelectionChanged="#onEngineTabSelected" text="Engines">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+<AnchorPane fx:id="mainViewAP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parks.inventorymanager.controller.PrimaryViewController">
+    <SplitPane fx:id="mainViewSplitPane" dividerPositions="0.8454773869346733" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="mainViewTop" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Tab fx:id="enginesTab" onSelectionChanged="#onEngineTabSelected" text="Engines">
+                    <AnchorPane fx:id="enginesTabAP" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                         <TableView fx:id="engineTable" layoutX="200.0" layoutY="84.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                             <columns>
                                 <TableColumn fx:id="engineIdCol" prefWidth="70.0" text="Number" />
@@ -42,7 +42,7 @@
                         </HBox>
                     </AnchorPane>
                 </Tab>
-                <Tab onSelectionChanged="#onPartTabSelected" text="Parts">
+                <Tab fx:id="partsTab" onSelectionChanged="#onPartTabSelected" text="Parts">
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                         <SplitPane dividerPositions="0.85" layoutX="209.0" layoutY="69.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -278,12 +278,12 @@
                 </Tab>
             </TabPane>
         </AnchorPane>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-            <HBox alignment="CENTER_RIGHT" layoutX="384.0" layoutY="-21.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="mainViewBottom" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <HBox fx:id="mainViewBottomHBox" alignment="CENTER_RIGHT" layoutX="384.0" layoutY="-21.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <padding>
                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                 </padding>
-                <Button mnemonicParsing="false" onAction="#onLogOutClick" text="Log-Out" />
+                <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#onLogOutClick" text="Log-Out" />
             </HBox>
             <Label fx:id="systemMessageLabel" layoutX="20.0" layoutY="36.0" text="System Message" AnchorPane.leftAnchor="20.0" />
         </AnchorPane>

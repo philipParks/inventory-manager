@@ -81,6 +81,7 @@ public class LoginController implements Initializable {
 
         Parent mainViewParent = mainViewLoader.getRoot();
         Scene mainViewScene = new Scene(mainViewParent);
+        mainViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         Stage mainViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
         mainViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");

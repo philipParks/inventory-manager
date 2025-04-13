@@ -162,6 +162,7 @@ public class PrimaryViewController implements Initializable {
 
         Parent engineViewParent = engineViewLoader.getRoot();
         Scene engineViewScene = new Scene(engineViewParent);
+        engineViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         Stage engineViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
         engineViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
@@ -188,6 +189,7 @@ public class PrimaryViewController implements Initializable {
 
         Parent engineViewParent = engineViewLoader.getRoot();
         Scene engineViewScene = new Scene(engineViewParent);
+        engineViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         Stage engineViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
         engineViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
@@ -304,10 +306,10 @@ public class PrimaryViewController implements Initializable {
      * @param buttonClicked Modify in house part button clicked. */
     public void onModifyInhouseClick(ActionEvent buttonClicked) throws IOException {
 
-        FXMLLoader engineViewLoader = new FXMLLoader();
-        engineViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/partView.fxml"));
-        engineViewLoader.load();
-        PartViewController pvController = engineViewLoader.getController();
+        FXMLLoader partViewLoader = new FXMLLoader();
+        partViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/partView.fxml"));
+        partViewLoader.load();
+        PartViewController pvController = partViewLoader.getController();
 
         try {
             pvController.transferPart(inhouseTable.getSelectionModel().getSelectedItem());
@@ -316,13 +318,14 @@ public class PrimaryViewController implements Initializable {
             return;
         }
 
-        Parent engineViewParent = engineViewLoader.getRoot();
-        Scene engineViewScene = new Scene(engineViewParent);
-        Stage engineViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
+        Parent partViewParent = partViewLoader.getRoot();
+        Scene partViewScene = new Scene(partViewParent);
+        partViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        Stage partViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
-        engineViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-        engineViewWindow.setScene(engineViewScene);
-        engineViewWindow.show();
+        partViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
+        partViewWindow.setScene(partViewScene);
+        partViewWindow.show();
 
     }
 
@@ -382,10 +385,10 @@ public class PrimaryViewController implements Initializable {
      * @param buttonClicked modify outsource part button clicked. */
     public void onModifyOutsourceClick(ActionEvent buttonClicked) throws IOException {
 
-        FXMLLoader engineViewLoader = new FXMLLoader();
-        engineViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/partView.fxml"));
-        engineViewLoader.load();
-        PartViewController pvController = engineViewLoader.getController();
+        FXMLLoader partViewLoader = new FXMLLoader();
+        partViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/partView.fxml"));
+        partViewLoader.load();
+        PartViewController pvController = partViewLoader.getController();
 
         try {
             pvController.transferPart(outsourceTable.getSelectionModel().getSelectedItem());
@@ -394,13 +397,14 @@ public class PrimaryViewController implements Initializable {
             return;
         }
 
-        Parent engineViewParent = engineViewLoader.getRoot();
-        Scene engineViewScene = new Scene(engineViewParent);
-        Stage engineViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
+        Parent partViewParent = partViewLoader.getRoot();
+        Scene partViewScene = new Scene(partViewParent);
+        partViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        Stage partViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
-        engineViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-        engineViewWindow.setScene(engineViewScene);
-        engineViewWindow.show();
+        partViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
+        partViewWindow.setScene(partViewScene);
+        partViewWindow.show();
 
     }
 
@@ -426,17 +430,18 @@ public class PrimaryViewController implements Initializable {
      * @param buttonClicked Add part button clicked. */
     public void onAddPartClick(ActionEvent buttonClicked) throws IOException {
 
-        FXMLLoader engineViewLoader = new FXMLLoader();
-        engineViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/partView.fxml"));
-        engineViewLoader.load();
+        FXMLLoader partViewLoader = new FXMLLoader();
+        partViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/partView.fxml"));
+        partViewLoader.load();
 
-        Parent engineViewParent = engineViewLoader.getRoot();
-        Scene engineViewScene = new Scene(engineViewParent);
-        Stage engineViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
+        Parent partViewParent = partViewLoader.getRoot();
+        Scene partViewScene = new Scene(partViewParent);
+        partViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        Stage partViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
-        engineViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-        engineViewWindow.setScene(engineViewScene);
-        engineViewWindow.show();
+        partViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
+        partViewWindow.setScene(partViewScene);
+        partViewWindow.show();
 
     }
 
@@ -481,6 +486,7 @@ public class PrimaryViewController implements Initializable {
 
         Parent distributorViewParent = distributorViewLoader.getRoot();
         Scene distributorViewScene = new Scene(distributorViewParent);
+        distributorViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         Stage distributorViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
         distributorViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
@@ -493,17 +499,18 @@ public class PrimaryViewController implements Initializable {
      * @param buttonClicked Button clicked. */
     public void onAddWorkstationClick(ActionEvent buttonClicked) throws IOException {
 
-        FXMLLoader distributorViewLoader = new FXMLLoader();
-        distributorViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/workstationView.fxml"));
-        distributorViewLoader.load();
+        FXMLLoader workstationViewLoader = new FXMLLoader();
+        workstationViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/workstationView.fxml"));
+        workstationViewLoader.load();
 
-        Parent distributorViewParent = distributorViewLoader.getRoot();
-        Scene distributorViewScene = new Scene(distributorViewParent);
-        Stage distributorViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
+        Parent workstationViewParent = workstationViewLoader.getRoot();
+        Scene workstationViewScene = new Scene(workstationViewParent);
+        workstationViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        Stage workstationViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
 
-        distributorViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-        distributorViewWindow.setScene(distributorViewScene);
-        distributorViewWindow.show();
+        workstationViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
+        workstationViewWindow.setScene(workstationViewScene);
+        workstationViewWindow.show();
 
     }
 
@@ -612,6 +619,7 @@ public class PrimaryViewController implements Initializable {
 
             Parent loginViewParent = loginViewLoader.getRoot();
             Scene loginViewScene = new Scene(loginViewParent);
+            loginViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
             Stage loginViewWindow = (Stage) ((Node)buttonClicked.getSource()).getScene().getWindow();
 
             loginViewWindow.setTitle("Login");

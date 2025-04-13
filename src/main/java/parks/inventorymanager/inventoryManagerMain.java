@@ -19,6 +19,8 @@ public class inventoryManagerMain extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(inventoryManagerMain.class.getResource("/parks/inventorymanager/view/loginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        String css = this.getClass().getResource("/style.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();

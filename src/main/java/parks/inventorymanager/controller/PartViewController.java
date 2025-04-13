@@ -117,6 +117,7 @@ public class PartViewController implements Initializable {
 
         Parent primaryViewParent = FXMLLoader.load(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
         Scene primaryViewScene = new Scene(primaryViewParent);
+        primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         Stage primaryViewWindow = (Stage) ((Node)saveButtonClicked.getSource()).getScene().getWindow();
 
         primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
@@ -143,6 +144,7 @@ public class PartViewController implements Initializable {
 
             Parent primaryViewParent = primaryViewLoader.getRoot();
             Scene primaryViewScene = new Scene(primaryViewParent);
+            primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
             Stage primaryViewWindow = (Stage) ((Node)cancelButtonClicked.getSource()).getScene().getWindow();
 
             primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");

@@ -203,7 +203,7 @@ public abstract class EngineDAO {
 
         try {
             String updateSQL = "UPDATE engine SET engine = ?, location = ?, status = ?, fuel_type = ?, " +
-                    "serial_number = ?, cylinder = ? modified_by = ? WHERE engine_id = ?";
+                    "serial_number = ?, cylinder = ?, modified_by = ? WHERE engine_id = ?";
             PreparedStatement updatePS = JDBConnection.getConnection().prepareStatement(updateSQL);
             updatePS.setString(1, name);
             updatePS.setString(2, location);
