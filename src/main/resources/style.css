@@ -1,0 +1,38 @@
+/* For a guide to styling: https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/doc-files/cssref.html */
+
+/*
+Color Palette
+
+Air Force Blue: #143490
+Bright Navy Blue: #1372df
+Bleu De France: #318ef4
+
+Charcoal: #2c3e57
+Cafe Au Lait: #a37e57
+Dark Vanilla: #c9bba7
+*/
+
+.button {
+    -fx-background-color: #a37e57;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #c9bba7;
+}
+
+.text-field, .choice-box {
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+#loginAP, #enginesTab, #enginesTabAP, #mainViewBottom, #inHouseAP, #outsourceAP, #addPartAP, #partsTab {
+    -fx-background-color: #c9bba7;
+}
+
+#warnLabel, #systemMessageLabel {
+    -fx-text-fill: red;
+}
+
+#engineTable {
+    -fx-background-color: #143490;
+}
