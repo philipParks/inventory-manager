@@ -17,6 +17,7 @@ import parks.inventorymanager.dao.EnginePartDAO;
 import parks.inventorymanager.dao.InHouseDAO;
 import parks.inventorymanager.dao.OutsourcedDAO;
 import parks.inventorymanager.model.*;
+import parks.inventorymanager.util.HelpMethods;
 
 import java.io.IOException;
 import java.net.URL;
@@ -142,6 +143,8 @@ public class EngineViewController implements Initializable {
         }
 
         EnginePartDAO.delete(partId);
+        allAssociatedParts.remove(partId);
+        enginePartsTable.setItems(allAssociatedParts);
     }
 
     /** Saves the engine information.
@@ -173,14 +176,7 @@ public class EngineViewController implements Initializable {
 
         EngineDAO.update(engineId, engine, location, status, fuelType, serialNumber, cylinder, authUser.getUserId());
 
-        Parent primaryViewParent = FXMLLoader.load(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
-        Scene primaryViewScene = new Scene(primaryViewParent);
-        primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        Stage primaryViewWindow = (Stage) ((Node)saveButtonClicked.getSource()).getScene().getWindow();
-
-        primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-        primaryViewWindow.setScene(primaryViewScene);
-        primaryViewWindow.show();
+        HelpMethods.primaryViewLoader(saveButtonClicked);
     }
 
     /** Cancels the work done on an engine.
@@ -196,18 +192,7 @@ public class EngineViewController implements Initializable {
         Optional<ButtonType> result = cancelAlert.showAndWait();
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            FXMLLoader primaryViewLoader = new FXMLLoader();
-            primaryViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
-            primaryViewLoader.load();
-
-            Parent primaryViewParent = primaryViewLoader.getRoot();
-            Scene primaryViewScene = new Scene(primaryViewParent);
-            primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-            Stage primaryViewWindow = (Stage) ((Node)buttonClicked.getSource()).getScene().getWindow();
-
-            primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-            primaryViewWindow.setScene(primaryViewScene);
-            primaryViewWindow.show();
+            HelpMethods.primaryViewLoader(buttonClicked);
         }
 
     }

@@ -14,6 +14,7 @@ import parks.inventorymanager.model.Distributor;
 import parks.inventorymanager.model.Inhouse;
 import parks.inventorymanager.model.Outsourced;
 import parks.inventorymanager.model.Workstation;
+import parks.inventorymanager.util.HelpMethods;
 
 import java.io.IOException;
 import java.net.URL;
@@ -115,14 +116,7 @@ public class PartViewController implements Initializable {
             OutsourcedDAO.insert(distributorId, partId, user);
         }
 
-        Parent primaryViewParent = FXMLLoader.load(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
-        Scene primaryViewScene = new Scene(primaryViewParent);
-        primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        Stage primaryViewWindow = (Stage) ((Node)saveButtonClicked.getSource()).getScene().getWindow();
-
-        primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-        primaryViewWindow.setScene(primaryViewScene);
-        primaryViewWindow.show();
+        HelpMethods.primaryViewLoader(saveButtonClicked);
 
     }
 
@@ -138,18 +132,7 @@ public class PartViewController implements Initializable {
         Optional<ButtonType> result = cancelAlert.showAndWait();
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            FXMLLoader primaryViewLoader = new FXMLLoader();
-            primaryViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
-            primaryViewLoader.load();
-
-            Parent primaryViewParent = primaryViewLoader.getRoot();
-            Scene primaryViewScene = new Scene(primaryViewParent);
-            primaryViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-            Stage primaryViewWindow = (Stage) ((Node)cancelButtonClicked.getSource()).getScene().getWindow();
-
-            primaryViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-            primaryViewWindow.setScene(primaryViewScene);
-            primaryViewWindow.show();
+            HelpMethods.primaryViewLoader(cancelButtonClicked);
         }
 
     }

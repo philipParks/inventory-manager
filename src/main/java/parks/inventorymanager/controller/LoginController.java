@@ -2,15 +2,11 @@ package parks.inventorymanager.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 import parks.inventorymanager.dao.UserDAO;
 import parks.inventorymanager.model.User;
+import parks.inventorymanager.util.HelpMethods;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -75,18 +71,7 @@ public class LoginController implements Initializable {
             targetFile.close();
         }
 
-        FXMLLoader mainViewLoader = new FXMLLoader();
-        mainViewLoader.setLocation(getClass().getResource("/parks/inventorymanager/view/primaryView.fxml"));
-        mainViewLoader.load();
-
-        Parent mainViewParent = mainViewLoader.getRoot();
-        Scene mainViewScene = new Scene(mainViewParent);
-        mainViewScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        Stage mainViewWindow = (Stage) ((Node) buttonClicked.getSource()).getScene().getWindow();
-
-        mainViewWindow.setTitle("Engine-uity Rebuilds Inventory Manager");
-        mainViewWindow.setScene(mainViewScene);
-        mainViewWindow.show();
+        HelpMethods.primaryViewLoader(buttonClicked);
     }
 
     /** Closes the application. */
